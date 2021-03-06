@@ -24,9 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  get_it: ^5.0.6
-  injectable: ^1.1.2
-  stacked: ^1.9.3
+  get_it: ^6.0.0
+  google_fonts: ^2.0.0
+  injectable: ^1.2.0
+  stacked: ^1.9.0
   stacked_services: ^0.7.2
 
 dev_dependencies:
@@ -57,10 +58,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Sora
+      fonts:
+        - asset: assets/fonts/Sora.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

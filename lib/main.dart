@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sohii/ui/views/app/locator.dart';
 import 'package:sohii/ui/views/home/header_view.dart';
 
@@ -15,6 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Sora',
+      ),
       title: 'Flutter Demo',
       home: Scaffold(
         body: CenteredView(
