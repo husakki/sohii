@@ -23,14 +23,11 @@ class ProductView extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Image(
-                                        image: AssetImage("assets/image/" +
-                                            data[index].product),
-                                        height: 350,
-                                        width: 350,
-                                      ),
+                                    Image(
+                                      image: AssetImage("assets/image/" +
+                                          data[index].product),
+                                      height: 350,
+                                      width: 350,
                                     ),
                                     SizedBox(
                                       width: 300,
@@ -47,12 +44,16 @@ class ProductView extends StatelessWidget {
                                         SizedBox(
                                           height: 50,
                                         ),
-                                        ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            primary: Colors.green,
+                                        SizedBox(
+                                          width: 350,
+                                          height: 50,
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              primary: Colors.green,
+                                            ),
+                                            child: Text("in den Warenkorb"),
+                                            onPressed: () => {},
                                           ),
-                                          child: Text("in den Warenkorb"),
-                                          onPressed: () => {},
                                         ),
                                       ],
                                     ),
@@ -61,8 +62,9 @@ class ProductView extends StatelessWidget {
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Container(
+                                    margin: EdgeInsets.fromLTRB(0, 30, 0, 250),
                                     width: 350,
-                                    height: 30,
+                                    height: 40,
                                     color: Colors.green,
                                     child: Text(
                                       data[index].productInformation,
