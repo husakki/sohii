@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sohii/ui/views/app/locator.dart';
 import 'package:sohii/ui/views/home/header_view.dart';
 
+import 'constans.dart';
 import 'ui/views/product/product_view.dart';
 import 'widgets/centered_view.dart';
 
@@ -16,10 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Sora',
-      ),
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: mainTheme,
+      title: 'Sohii',
       home: Scaffold(
         body: CenteredView(
           child: Column(

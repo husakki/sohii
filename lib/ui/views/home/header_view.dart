@@ -13,7 +13,6 @@ class HeaderView extends StatelessWidget {
               child: Text(
                 model.title,
                 style: TextStyle(
-                  color: Colors.black,
                   fontSize: 20,
                 ),
               ),
