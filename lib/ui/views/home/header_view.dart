@@ -12,7 +12,7 @@ class HeaderView extends StatelessWidget {
         builder: (context, model, child) => Container(
               width: double.infinity,
               child: Image(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 image: AssetImage("assets/image/" + model.title),
                 height: 200,
               ),

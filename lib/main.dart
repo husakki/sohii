@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       title: 'Sohii',
       home: Scaffold(
         body: Column(
-          mainAxisSize: MainAxisSize.max,
           children: [
             Container(
               color: Colors.pink,

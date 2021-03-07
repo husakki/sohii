@@ -19,24 +19,32 @@ class ProductView extends StatelessWidget {
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           return Container(
-                            color: Colors.deepOrange,
+                            // color: Colors.deepPurple,
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
                               children: [
                                 Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                                    Image(
-                                      image: AssetImage("assets/image/" +
-                                          data[index].product),
-                                      height: 350,
-                                      width: 350,
-                                    ),
-                                    SizedBox(
-                                      width: 300,
+                                    Column(
+                                      children: [
+                                        Image(
+                                          image: AssetImage("assets/image/" +
+                                              data[index].product),
+                                          height: 350,
+                                          width: 350,
+                                        ),
+                                        Container(
+                                          width: 350,
+                                          height: 40,
+                                          color: Colors.green,
+                                          child: Text(
+                                            data[index].productInformation,
+                                          ),
+                                        )
+                                      ],
                                     ),
                                     Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
                                       children: [
                                         Container(
                                           width: 350,
@@ -60,18 +68,6 @@ class ProductView extends StatelessWidget {
                                       ],
                                     ),
                                   ],
-                                ),
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 30, 0, 250),
-                                    width: 350,
-                                    height: 40,
-                                    color: Colors.green,
-                                    child: Text(
-                                      data[index].productInformation,
-                                    ),
-                                  ),
                                 )
                               ],
                             ),
