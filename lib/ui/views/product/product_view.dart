@@ -92,7 +92,8 @@ class ProductView extends StatelessWidget {
                                             style: ElevatedButton.styleFrom(
                                               primary: Colors.transparent,
                                               elevation: 1.0,
-                                              shadowColor: Colors.cyan,
+                                              shadowColor: Color(int.parse(
+                                                  data[index].mainColour)),
                                             ),
                                             child: Text("in den Warenkorb"),
                                             onPressed: () => {},
