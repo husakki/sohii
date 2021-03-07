@@ -4,7 +4,6 @@ import 'package:sohii/ui/views/home/header_view.dart';
 
 import 'constans.dart';
 import 'ui/views/product/product_view.dart';
-import 'widgets/centered_view.dart';
 
 void main() {
   setupLocator();

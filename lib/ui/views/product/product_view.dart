@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sohii/ui/views/dropdown/dropdownsize_view.dart';
 import 'package:stacked/stacked.dart';
 
 import 'product_viewmodel.dart';
@@ -48,6 +49,7 @@ class ProductView extends StatelessWidget {
                                           width: 350,
                                           child: Text(data[index].description),
                                         ),
+                                        DropDownSize(),
                                         SizedBox(
                                           height: 50,
                                         ),
