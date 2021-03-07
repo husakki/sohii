@@ -10,16 +10,18 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<ProductViewModel>.nonReactive(
-        builder: (context, model, child) => Expanded(
-              child: FutureBuilder(
-                builder: (context, futuremodel) {
-                  List<Products> data = futuremodel.data;
-                  if (futuremodel.hasData) {
-                    return ListView.builder(
+        builder: (context, model, child) => FutureBuilder(
+              builder: (context, futuremodel) {
+                List<Products> data = futuremodel.data;
+                if (futuremodel.hasData) {
+                  return Flexible(
+                    child: ListView.builder(
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           return Container(
+                            color: Colors.deepOrange,
                             child: Column(
+                              mainAxisSize: MainAxisSize.max,
                               children: [
                                 Row(
                                   children: [
@@ -74,25 +76,25 @@ class ProductView extends StatelessWidget {
                               ],
                             ),
                           );
-                        });
-                  } else if (futuremodel.hasError) {
-                    return Center(
-                      child: Container(
-                        child: Text(
-                          "Something went wrong",
-                          style: TextStyle(color: Colors.orangeAccent),
-                        ),
+                        }),
+                  );
+                } else if (futuremodel.hasError) {
+                  return Center(
+                    child: Container(
+                      child: Text(
+                        "Something went wrong",
+                        style: TextStyle(color: Colors.orangeAccent),
                       ),
-                    );
-                  } else {
-                    return Center(
-                        child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                    ));
-                  }
-                },
-                future: model.picturePath,
-              ),
+                    ),
+                  );
+                } else {
+                  return Center(
+                      child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  ));
+                }
+              },
+              future: model.picturePath,
             ),
         viewModelBuilder: () => ProductViewModel());
   }

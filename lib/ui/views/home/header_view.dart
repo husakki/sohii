@@ -10,7 +10,9 @@ class HeaderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<HeaderViewModel>.nonReactive(
         builder: (context, model, child) => Container(
+              width: double.infinity,
               child: Image(
+                alignment: Alignment.centerLeft,
                 image: AssetImage("assets/image/" + model.title),
                 height: 200,
               ),

@@ -20,13 +20,15 @@ class MyApp extends StatelessWidget {
       theme: mainTheme,
       title: 'Sohii',
       home: Scaffold(
-        body: CenteredView(
-          child: Column(
-            children: [
-              HeaderView(),
-              ProductView(),
-            ],
-          ),
+        body: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+              color: Colors.pink,
+              child: HeaderView(),
+            ),
+            ProductView(),
+          ],
         ),
       ),
     );
