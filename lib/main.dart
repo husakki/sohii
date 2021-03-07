@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sohii/ui/views/app/locator.dart';
 import 'package:sohii/ui/views/home/header_view.dart';
+import 'package:sohii/ui/views/shoppingcart/shoppingcart_view.dart';
 
 import 'constans.dart';
 import 'ui/views/product/product_view.dart';
@@ -22,6 +23,12 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             HeaderView(),
+            Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 85),
+                  child: ShoppingCartView(),
+                )),
             ProductView(),
           ],
         ),
