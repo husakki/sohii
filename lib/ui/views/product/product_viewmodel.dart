@@ -1,7 +1,6 @@
 import 'package:sohii/ui/views/app/locator.dart';
 import 'package:sohii/ui/views/product/product_service.dart';
 import 'package:stacked/stacked.dart';
-import 'package:injectable/injectable.dart';
 
 import 'products.dart';
 

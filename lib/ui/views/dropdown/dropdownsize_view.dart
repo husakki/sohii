@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:sohii/ui/views/dropdown/dropdownsize_viewmodel.dart';
+import 'package:stacked/stacked.dart';
 
-class DropDownSize extends StatefulWidget {
+class DropDownSize extends StatelessWidget {
   const DropDownSize({Key key}) : super(key: key);
 
   @override
-  _DropDownSizeState createState() => _DropDownSizeState();
-}
-
-class _DropDownSizeState extends State<DropDownSize> {
-  String valueChoose;
-  List sizes = ["S", "M", "L", "XL"];
-
-  @override
   Widget build(BuildContext context) {
-    return DropdownButton(
-      items: sizes.map((e) {
-        return DropdownMenuItem(
-          value: e,
-          child: Text(e),
-        );
-      }).toList(),
-      value: valueChoose,
-      onChanged: (newValue) => {
-        setState(() {
-          valueChoose = newValue;
-        })
-      },
+    return ViewModelBuilder<DropDownSizeViewModel>.reactive(
+      builder: (context, model, child) => DropdownButton(
+        items: model.getSizesAsDropDownMenu(),
+        value: model.getValueChoose,
+        onChanged: (newValue) => model.setValueChoose = newValue,
+      ),
+      viewModelBuilder: () => DropDownSizeViewModel(),
     );
   }
 }
