@@ -17,6 +17,7 @@ class ProductView extends StatelessWidget {
                 if (futuremodel.hasData) {
                   return Flexible(
                     child: ListView.builder(
+                        cacheExtent: 5000.0,
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           return Container(
@@ -49,7 +50,30 @@ class ProductView extends StatelessWidget {
                                           width: 350,
                                           child: Text(data[index].description),
                                         ),
-                                        DropDownSize(),
+                                        Row(
+                                          children: [
+                                            DropDownSize(dropDownList: [
+                                              "S",
+                                              "M",
+                                              "L",
+                                              "XL"
+                                            ]),
+                                            SizedBox(
+                                              width: 60,
+                                            ),
+                                            DropDownSize(dropDownList: [
+                                              "1",
+                                              "2",
+                                              "3",
+                                              "4",
+                                              "5",
+                                              "6",
+                                              "7",
+                                              "8",
+                                              "9",
+                                            ]),
+                                          ],
+                                        ),
                                         SizedBox(
                                           height: 50,
                                         ),

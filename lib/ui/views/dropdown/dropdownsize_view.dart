@@ -3,7 +3,8 @@ import 'package:sohii/ui/views/dropdown/dropdownsize_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class DropDownSize extends StatelessWidget {
-  const DropDownSize({Key key}) : super(key: key);
+  final List<String> dropDownList;
+  DropDownSize({Key key, @required this.dropDownList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class DropDownSize extends StatelessWidget {
         value: model.getValueChoose,
         onChanged: (newValue) => model.setValueChoose = newValue,
       ),
-      viewModelBuilder: () => DropDownSizeViewModel(),
+      viewModelBuilder: () => DropDownSizeViewModel(dropDownList),
     );
   }
 }

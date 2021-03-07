@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 class DropDownSizeViewModel extends BaseViewModel {
-  List<String> sizes = ["S", "M", "L", "XL"];
+  List<String> sizes = [];
   String valueChoose;
+
+  DropDownSizeViewModel(this.sizes);
 
   String get getValueChoose => this.valueChoose;
 
