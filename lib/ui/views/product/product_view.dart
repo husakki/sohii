@@ -19,12 +19,11 @@ class ProductView extends StatelessWidget {
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           return Container(
-                            // color: Colors.deepPurple,
                             child: Column(
                               children: [
                                 Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Column(
                                       children: [
@@ -37,7 +36,6 @@ class ProductView extends StatelessWidget {
                                         Container(
                                           width: 350,
                                           height: 40,
-                                          color: Colors.green,
                                           child: Text(
                                             data[index].productInformation,
                                           ),
@@ -48,7 +46,6 @@ class ProductView extends StatelessWidget {
                                       children: [
                                         Container(
                                           width: 350,
-                                          color: Colors.red,
                                           child: Text(data[index].description),
                                         ),
                                         SizedBox(
@@ -59,7 +56,9 @@ class ProductView extends StatelessWidget {
                                           height: 50,
                                           child: ElevatedButton(
                                             style: ElevatedButton.styleFrom(
-                                              primary: Colors.green,
+                                              primary: Colors.transparent,
+                                              elevation: 1.0,
+                                              shadowColor: Colors.cyan,
                                             ),
                                             child: Text("in den Warenkorb"),
                                             onPressed: () => {},
@@ -68,6 +67,9 @@ class ProductView extends StatelessWidget {
                                       ],
                                     ),
                                   ],
+                                ),
+                                SizedBox(
+                                  height: 500,
                                 )
                               ],
                             ),

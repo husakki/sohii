@@ -22,10 +22,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Column(
           children: [
-            Container(
-              color: Colors.pink,
-              child: HeaderView(),
-            ),
+            HeaderView(),
             ProductView(),
           ],
         ),
