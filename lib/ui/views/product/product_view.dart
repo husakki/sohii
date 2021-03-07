@@ -38,7 +38,9 @@ class ProductView extends StatelessWidget {
                                                     BorderRadius.circular(50),
                                                 boxShadow: [
                                                   BoxShadow(
-                                                    color: Colors.white,
+                                                    color: Color(int.parse(
+                                                        data[index]
+                                                            .mainColour)),
                                                     blurRadius: 75,
                                                     spreadRadius: 70,
                                                   ),

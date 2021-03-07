@@ -12,8 +12,8 @@ class ProductService {
     Map<String, dynamic> jsonResponse = jsonDecode(jsonString);
     List<Products> jsonProducts = [];
     jsonResponse.forEach((key, value) {
-      jsonProducts.add(Products(
-          value['Product'], value['Description'], value['ProductInformation']));
+      jsonProducts.add(Products(value['Product'], value['Description'],
+          value['ProductInformation'], value['MainColor']));
     });
     return jsonProducts;
   }
