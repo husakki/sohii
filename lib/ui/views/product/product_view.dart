@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sohii/ui/views/dropdown/dropdownsize_view.dart';
 import 'package:stacked/stacked.dart';
 
+import 'dropdown/dropdownsize_view.dart';
 import 'product_viewmodel.dart';
 import 'products.dart';
 
 class ProductView extends StatelessWidget {
-  const ProductView({Key key}) : super(key: key);
+  ProductView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +29,30 @@ class ProductView extends StatelessWidget {
                                   children: [
                                     Column(
                                       children: [
-                                        Image(
-                                          image: AssetImage("assets/image/" +
-                                              data[index].product),
-                                          height: 350,
-                                          width: 350,
+                                        Stack(
+                                          alignment: Alignment.center,
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(50),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    color: Colors.white,
+                                                    blurRadius: 75,
+                                                    spreadRadius: 70,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Image(
+                                              image: AssetImage(
+                                                  "assets/image/" +
+                                                      data[index].product),
+                                              height: 350,
+                                              width: 350,
+                                            ),
+                                          ],
                                         ),
                                         Container(
                                           width: 350,
@@ -52,26 +71,13 @@ class ProductView extends StatelessWidget {
                                         ),
                                         Row(
                                           children: [
-                                            DropDownSize(dropDownList: [
-                                              "S",
-                                              "M",
-                                              "L",
-                                              "XL"
-                                            ]),
+                                            DropDownSize(
+                                                dropDownList: model.getSizes),
                                             SizedBox(
                                               width: 60,
                                             ),
-                                            DropDownSize(dropDownList: [
-                                              "1",
-                                              "2",
-                                              "3",
-                                              "4",
-                                              "5",
-                                              "6",
-                                              "7",
-                                              "8",
-                                              "9",
-                                            ]),
+                                            DropDownSize(
+                                                dropDownList: model.getAmount),
                                           ],
                                         ),
                                         SizedBox(
