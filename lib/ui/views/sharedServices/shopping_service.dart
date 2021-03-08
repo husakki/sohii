@@ -1,11 +1,17 @@
 import 'package:injectable/injectable.dart';
+import 'package:observable_ish/observable_ish.dart';
 import 'package:sohii/ui/views/sharedServices/shoppedProducts.dart';
+import 'package:stacked/stacked.dart';
 
 @lazySingleton
-class ShoppingService {
-  List<ShoppedProducts> _shoppingList = [];
+class ShoppingService with ReactiveServiceMixin {
+  RxList<ShoppedProducts> _shoppingList = RxList<ShoppedProducts>();
 
-  List<ShoppedProducts> get shoppingList => this._shoppingList;
+  List<ShoppedProducts> get shoppingList => this._shoppingList.toList();
+
+  ShoppingService() {
+    listenToReactiveValues([_shoppingList]);
+  }
 
   ShoppedProducts addToShoppingList(ShoppedProducts item) {
     this._shoppingList.add(item);
@@ -16,7 +22,5 @@ class ShoppingService {
     this._shoppingList.remove(item);
   }
 
-  int getShoppingListLength() {
-    return this._shoppingList.length;
-  }
+  int getShoppingListLength() => this._shoppingList.length;
 }

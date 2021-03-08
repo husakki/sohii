@@ -7,24 +7,27 @@ class ShoppingCartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
-        builder: (context, model, child) => Stack(
-              alignment: Alignment.bottomRight,
-              children: [
-                Icon(
-                  Icons.shopping_bag,
-                  color: Colors.white,
-                  size: 45,
-                ),
-                Container(
-                  height: 25,
-                  width: 25,
-                  child: Center(child: Text(model.totalItems.toString())),
-                  decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(50)),
-                ),
-              ],
+    return ViewModelBuilder<ShoppingCartViewModel>.reactive(
+        builder: (context, model, child) => GestureDetector(
+              onTap: () => model.notfi(),
+              child: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  Icon(
+                    Icons.shopping_bag,
+                    color: Colors.white,
+                    size: 45,
+                  ),
+                  Container(
+                    height: 25,
+                    width: 25,
+                    child: Center(child: Text(model.totalItems.toString())),
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(50)),
+                  ),
+                ],
+              ),
             ),
         viewModelBuilder: () => ShoppingCartViewModel());
   }

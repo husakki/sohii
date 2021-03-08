@@ -27,6 +27,7 @@ dependencies:
   get_it: ^6.0.0
   google_fonts: ^2.0.0
   injectable: ^1.2.0
+  observable_ish: 2.1.4
   stacked: ^1.9.0
   stacked_services: ^0.7.2
 

@@ -4,12 +4,17 @@ import 'package:sohii/ui/views/sharedServices/shoppedProducts.dart';
 import 'package:sohii/ui/views/sharedServices/shopping_service.dart';
 import 'package:stacked/stacked.dart';
 
-class ShoppingCartButtonViewModel extends BaseViewModel {
+class ShoppingCartButtonViewModel extends ReactiveViewModel {
   final _shoppingService = locator<ShoppingService>();
 
-  ShoppedProducts addItem(int amount, String size, Products products) {
+  void addItem(int amount, String size, Products products) {
     ShoppedProducts newItem = ShoppedProducts(amount, size, products);
     _shoppingService.addToShoppingList(newItem);
-    return newItem;
+    notifyListeners();
   }
+
+  int get totalItems => _shoppingService.getShoppingListLength();
+
+  @override
+  List<ReactiveServiceMixin> get reactiveServices => [_shoppingService];
 }

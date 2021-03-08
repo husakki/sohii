@@ -13,7 +13,7 @@ class ShoppingCartButtonView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.nonReactive(
+    return ViewModelBuilder<ShoppingCartButtonViewModel>.reactive(
         builder: (context, model, child) => SizedBox(
               width: 350,
               height: 50,
