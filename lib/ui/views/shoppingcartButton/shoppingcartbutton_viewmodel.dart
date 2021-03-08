@@ -9,6 +9,12 @@ class ShoppingCartButtonViewModel extends ReactiveViewModel {
 
   void addItem(int amount, String size, Products products) {
     ShoppedProducts newItem = ShoppedProducts(amount, size, products);
+    print("amount: " +
+        amount.toString() +
+        " size: " +
+        size +
+        " product: " +
+        products.product);
     _shoppingService.addToShoppingList(newItem);
     notifyListeners();
   }
