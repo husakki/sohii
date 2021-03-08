@@ -5,6 +5,7 @@ import 'package:stacked/stacked.dart';
 import 'products.dart';
 
 class ProductViewModel extends BaseViewModel {
+  //TODO passt nicht hier rein die beiden Lists
   final _sizes = ["S", "M", "L", "XL"];
   final _amount = [
     "1",

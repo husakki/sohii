@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sohii/ui/views/product/products.dart';
-import 'package:sohii/ui/views/product/shoppingcartButton/shoppingcartbutton_viewmodel.dart';
+import 'package:sohii/datatypes/products.dart';
 import 'package:stacked/stacked.dart';
+
+import 'shoppingcartbutton_viewmodel.dart';
 
 class ShoppingCartButtonView extends StatelessWidget {
   final int amount;
