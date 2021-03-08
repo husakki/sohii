@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sohii/ui/views/product/shoppingcartButton/shoppingcartbutton_view.dart';
 import 'package:stacked/stacked.dart';
 
 import 'dropdown/dropdownsize_view.dart';
@@ -85,19 +86,10 @@ class ProductView extends StatelessWidget {
                                         SizedBox(
                                           height: 50,
                                         ),
-                                        SizedBox(
-                                          width: 350,
-                                          height: 50,
-                                          child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              primary: Colors.transparent,
-                                              elevation: 1.0,
-                                              shadowColor: Color(int.parse(
-                                                  data[index].mainColour)),
-                                            ),
-                                            child: Text("in den Warenkorb"),
-                                            onPressed: () => {},
-                                          ),
+                                        ShoppingCartButtonView(
+                                          amount: 1,
+                                          size: "M",
+                                          products: data[index],
                                         ),
                                       ],
                                     ),
