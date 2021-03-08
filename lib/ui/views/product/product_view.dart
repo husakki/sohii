@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sohii/ui/views/product/shoppingcartButton/shoppingcartbutton_view.dart';
+import 'package:sohii/ui/views/dropdown/dropdownsize_view.dart';
+import 'package:sohii/ui/views/shoppingcartButton/shoppingcartbutton_view.dart';
 import 'package:stacked/stacked.dart';
 
-import 'dropdown/dropdownsize_view.dart';
 import 'product_viewmodel.dart';
-import 'products.dart';
+import '../../../datatypes/products.dart';
 
 class ProductView extends StatelessWidget {
   ProductView({Key key}) : super(key: key);

@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'products.dart';
+import '../datatypes/products.dart';
 
 @lazySingleton
 class ProductService {

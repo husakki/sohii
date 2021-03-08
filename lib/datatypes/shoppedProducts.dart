@@ -1,4 +1,4 @@
-import 'package:sohii/ui/views/product/products.dart';
+import 'package:sohii/datatypes/products.dart';
 
 class ShoppedProducts extends Products {
   int _amount = 0;

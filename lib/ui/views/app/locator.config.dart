@@ -7,8 +7,8 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../product/product_service.dart' as _i3;
-import '../sharedServices/shopping_service.dart'
+import '../../../services/product_service.dart' as _i3;
+import '../../../services/shopping_service.dart'
     as _i4; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

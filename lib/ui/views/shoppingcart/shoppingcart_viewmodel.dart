@@ -1,5 +1,5 @@
 import 'package:sohii/ui/views/app/locator.dart';
-import 'package:sohii/ui/views/sharedServices/shopping_service.dart';
+import 'package:sohii/services/shopping_service.dart';
 import 'package:stacked/stacked.dart';
 
 class ShoppingCartViewModel extends ReactiveViewModel {

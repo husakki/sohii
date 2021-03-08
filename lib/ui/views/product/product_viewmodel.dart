@@ -1,8 +1,8 @@
 import 'package:sohii/ui/views/app/locator.dart';
-import 'package:sohii/ui/views/product/product_service.dart';
+import 'package:sohii/services/product_service.dart';
 import 'package:stacked/stacked.dart';
 
-import 'products.dart';
+import '../../../datatypes/products.dart';
 
 class ProductViewModel extends BaseViewModel {
   //TODO passt nicht hier rein die beiden Lists

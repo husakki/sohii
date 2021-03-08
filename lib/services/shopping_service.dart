@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:observable_ish/observable_ish.dart';
-import 'package:sohii/ui/views/sharedServices/shoppedProducts.dart';
+import 'package:sohii/datatypes/shoppedProducts.dart';
 import 'package:stacked/stacked.dart';
 
 @lazySingleton
