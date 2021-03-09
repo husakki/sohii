@@ -72,9 +72,7 @@ class ProductView extends StatelessWidget {
                                           width: 350,
                                           child: Text(data[index].description),
                                         ),
-                                        DropDownSize(
-                                            //! hier ist baustelle :D
-                                            ),
+                                        DropDownSize(),
                                         SizedBox(
                                           height: 50,
                                         ),
@@ -87,6 +85,7 @@ class ProductView extends StatelessWidget {
                                               ),
                                             )),
                                         ShoppingCartButtonView(
+                                          // TODO hier kann ich es nicht getten!!!!
                                           size: model.selectedSize,
                                           products: data[index],
                                         ),

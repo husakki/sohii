@@ -1,7 +1,7 @@
 import 'package:sohii/datatypes/products.dart';
 
 class ShoppedProducts extends Products {
-  String _size = ""; //! vllt liegt es hierran?
+  String _size = "";
   Products _products;
 
   ShoppedProducts(this._size, this._products)

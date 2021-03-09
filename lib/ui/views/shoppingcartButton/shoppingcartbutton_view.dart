@@ -21,7 +21,7 @@ class ShoppingCartButtonView extends StatelessWidget {
                   elevation: 1.0,
                   shadowColor: Color(0xffFFFFFF),
                 ),
-                child: Text("in den Warenkorb" + model.size.toString()),
+                child: Text("in den Warenkorb"),
                 onPressed: () => {
                   model.addItem(size, products),
                 },

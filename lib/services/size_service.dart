@@ -2,6 +2,8 @@ import 'package:injectable/injectable.dart';
 
 @lazySingleton
 class SizeService {
+  //TODO es ist komisch, wenn das nicht null ist dann funkt es auch
+  // aber es sollte auch so funkten weil ich es ja sette!!
   String _currentSize;
 
   String currentSize() {

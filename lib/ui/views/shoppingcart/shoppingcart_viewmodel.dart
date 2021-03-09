@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 
 class ShoppingCartViewModel extends ReactiveViewModel {
   final _shoppingService = locator<ShoppingService>();
-
+  //TODO testen ob das auch ohne funkt!
   void notfi() => notifyListeners();
 
   int get totalItems {

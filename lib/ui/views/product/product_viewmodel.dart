@@ -10,6 +10,6 @@ class ProductViewModel extends BaseViewModel {
   var _sizeService = locator<SizeService>();
 
   Future<List<Products>> get picturePath => _product.getProducts();
-
+  //TODO überprüfe was der mir hier zurück gibt
   String get selectedSize => _sizeService.currentSize();
 }

@@ -12,6 +12,7 @@ class DropDownSize extends StatelessWidget {
       builder: (context, model, child) => DropdownButton(
         items: model.getSizesAsDropDownMenu(),
         value: model.getValueChoose,
+        //TODO hier kann ich es auch getten und setten!
         onChanged: (newValue) => model.setValueChoose = newValue,
       ),
       viewModelBuilder: () => DropDownSizeViewModel(),
