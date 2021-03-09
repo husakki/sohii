@@ -9,6 +9,7 @@ class ShoppingCartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<ShoppingCartViewModel>.reactive(
         builder: (context, model, child) => GestureDetector(
+              //TODO das ontap muss noch raus :D
               onTap: () => model.notfi(),
               child: Stack(
                 alignment: Alignment.bottomRight,

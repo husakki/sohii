@@ -11,7 +11,7 @@ class ProductView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<ProductViewModel>.nonReactive(
+    return ViewModelBuilder<ProductViewModel>.reactive(
         builder: (context, model, child) => FutureBuilder(
               builder: (context, futuremodel) {
                 List<Products> data = futuremodel.data;
@@ -78,8 +78,16 @@ class ProductView extends StatelessWidget {
                                         SizedBox(
                                           height: 50,
                                         ),
+                                        Container(
+                                            color: Colors.deepOrange,
+                                            child: Text(
+                                              model.selectedSize.toString(),
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            )),
                                         ShoppingCartButtonView(
-                                          size: "M",
+                                          size: model.selectedSize,
                                           products: data[index],
                                         ),
                                       ],

@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:sohii/services/size_service.dart';
+import 'package:sohii/ui/views/app/locator.dart';
 import 'package:stacked/stacked.dart';
 
 class DropDownSizeViewModel extends BaseViewModel {
-  List<String> sizes = [];
-  String valueChoose;
+  var _sizeService = locator<SizeService>();
+  List<String> sizes = ["S", "M", "L", "XL"];
 
-  DropDownSizeViewModel(this.sizes);
+  String get getValueChoose => _sizeService.currentSize();
 
-  String get getValueChoose => this.valueChoose;
-
-  set setValueChoose(String valueChoose) {
-    this.valueChoose = valueChoose;
+  set setValueChoose(String newvalueChoose) {
+    // print("aktuell bin ich: " +
+    //     getValueChoose.toString() +
+    //     " und ich moechte: " +
+    //     newvalueChoose);
+    _sizeService.setcurrentSize(newvalueChoose);
+    // print("setze eine Size; " + newvalueChoose);
+    // print("was ich vom serivce getter bekommen; " + _sizeService.currentSize);
     notifyListeners();
   }
 

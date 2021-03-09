@@ -1,3 +1,4 @@
+import 'package:sohii/services/size_service.dart';
 import 'package:sohii/ui/views/app/locator.dart';
 import 'package:sohii/datatypes/products.dart';
 import 'package:sohii/datatypes/shoppedProducts.dart';
@@ -6,8 +7,12 @@ import 'package:stacked/stacked.dart';
 
 class ShoppingCartButtonViewModel extends ReactiveViewModel {
   final _shoppingService = locator<ShoppingService>();
+  final _sizeService = locator<SizeService>();
+
+  get size => _sizeService.currentSize;
 
   void addItem(String size, Products products) {
+    print("size die ich als Shoppingcart bekomme " + size.toString());
     ShoppedProducts newItem = ShoppedProducts(size, products);
     print("size: " + size + " product: " + products.product);
     _shoppingService.addToShoppingList(newItem);
