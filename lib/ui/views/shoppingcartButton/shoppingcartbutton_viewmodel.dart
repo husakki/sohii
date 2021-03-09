@@ -7,14 +7,9 @@ import 'package:stacked/stacked.dart';
 class ShoppingCartButtonViewModel extends ReactiveViewModel {
   final _shoppingService = locator<ShoppingService>();
 
-  void addItem(int amount, String size, Products products) {
-    ShoppedProducts newItem = ShoppedProducts(amount, size, products);
-    print("amount: " +
-        amount.toString() +
-        " size: " +
-        size +
-        " product: " +
-        products.product);
+  void addItem(String size, Products products) {
+    ShoppedProducts newItem = ShoppedProducts(size, products);
+    print("size: " + size + " product: " + products.product);
     _shoppingService.addToShoppingList(newItem);
     notifyListeners();
   }

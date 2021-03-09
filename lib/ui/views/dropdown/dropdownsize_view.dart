@@ -4,8 +4,8 @@ import 'package:stacked/stacked.dart';
 import 'dropdownsize_viewmodel.dart';
 
 class DropDownSize extends StatelessWidget {
-  final List<String> dropDownList;
-  DropDownSize({Key key, @required this.dropDownList}) : super(key: key);
+  final _sizes = ["S", "M", "L", "XL"];
+  DropDownSize({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class DropDownSize extends StatelessWidget {
         value: model.getValueChoose,
         onChanged: (newValue) => model.setValueChoose = newValue,
       ),
-      viewModelBuilder: () => DropDownSizeViewModel(dropDownList),
+      viewModelBuilder: () => DropDownSizeViewModel(_sizes),
     );
   }
 }

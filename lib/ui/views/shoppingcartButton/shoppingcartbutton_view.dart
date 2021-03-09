@@ -5,12 +5,9 @@ import 'package:stacked/stacked.dart';
 import 'shoppingcartbutton_viewmodel.dart';
 
 class ShoppingCartButtonView extends StatelessWidget {
-  final int amount;
   final String size;
   final Products products;
-  ShoppingCartButtonView(
-      {Key key, @required this.amount, this.size, this.products})
-      : super(key: key);
+  ShoppingCartButtonView({Key key, this.size, this.products}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +23,7 @@ class ShoppingCartButtonView extends StatelessWidget {
                 ),
                 child: Text("in den Warenkorb"),
                 onPressed: () => {
-                  model.addItem(amount, size, products),
+                  model.addItem(size, products),
                 },
               ),
             ),
