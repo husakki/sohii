@@ -9,9 +9,8 @@ class ProductViewModel extends ReactiveViewModel {
   var _product = locator<ProductService>();
   var _sizeService = locator<SizeService>();
 
-  void notifi() => notifyListeners();
-
   Future<List<Products>> get picturePath => _product.getProducts();
+
   String get selectedSize => _sizeService.currentSize;
 
   @override

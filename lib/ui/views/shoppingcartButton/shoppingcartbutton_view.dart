@@ -22,9 +22,11 @@ class ShoppingCartButtonView extends StatelessWidget {
                   shadowColor: Color(0xffFFFFFF),
                 ),
                 child: Text("in den Warenkorb"),
-                onPressed: () => {
-                  model.addItem(size, products),
-                },
+                onPressed: size == null
+                    ? null
+                    : () => {
+                          model.addItem(size, products),
+                        },
               ),
             ),
         viewModelBuilder: () => ShoppingCartButtonViewModel());
