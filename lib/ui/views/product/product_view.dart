@@ -76,14 +76,17 @@ class ProductView extends StatelessWidget {
                                         SizedBox(
                                           height: 50,
                                         ),
-                                        Container(
-                                            color: Colors.deepOrange,
-                                            child: Text(
-                                              model.selectedSize.toString(),
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                              ),
-                                            )),
+                                        GestureDetector(
+                                          onTap: () => model.notifi(),
+                                          child: Container(
+                                              color: Colors.deepOrange,
+                                              child: Text(
+                                                model.selectedSize.toString(),
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                ),
+                                              )),
+                                        ),
                                         ShoppingCartButtonView(
                                           // TODO hier kann ich es nicht getten!!!!
                                           size: model.selectedSize,

@@ -5,11 +5,15 @@ import 'package:stacked/stacked.dart';
 
 import '../../../datatypes/products.dart';
 
-class ProductViewModel extends BaseViewModel {
+class ProductViewModel extends ReactiveViewModel {
   var _product = locator<ProductService>();
   var _sizeService = locator<SizeService>();
 
+  void notifi() => notifyListeners();
+
   Future<List<Products>> get picturePath => _product.getProducts();
-  //TODO überprüfe was der mir hier zurück gibt
-  String get selectedSize => _sizeService.currentSize();
+  String get selectedSize => _sizeService.currentSize;
+
+  @override
+  List<ReactiveServiceMixin> get reactiveServices => [_sizeService];
 }

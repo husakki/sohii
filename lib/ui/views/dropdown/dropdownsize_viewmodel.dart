@@ -3,21 +3,15 @@ import 'package:sohii/services/size_service.dart';
 import 'package:sohii/ui/views/app/locator.dart';
 import 'package:stacked/stacked.dart';
 
-class DropDownSizeViewModel extends BaseViewModel {
+class DropDownSizeViewModel extends ReactiveViewModel {
   var _sizeService = locator<SizeService>();
   List<String> sizes = ["S", "M", "L", "XL"];
 
-  String get getValueChoose => _sizeService.currentSize();
+  String get getValueChoose => _sizeService.currentSize;
 
   set setValueChoose(String newvalueChoose) {
-    // print("aktuell bin ich: " +
-    //     getValueChoose.toString() +
-    //     " und ich moechte: " +
-    //     newvalueChoose);
     _sizeService.setcurrentSize(newvalueChoose);
-    // print("setze eine Size; " + newvalueChoose);
-    // print("was ich vom serivce getter bekommen; " + _sizeService.currentSize);
-    notifyListeners();
+    notifyListeners(); // brauch ich das noch?
   }
 
   List<DropdownMenuItem<String>> getSizesAsDropDownMenu() {
@@ -28,4 +22,7 @@ class DropDownSizeViewModel extends BaseViewModel {
       );
     }).toList();
   }
+
+  @override
+  List<ReactiveServiceMixin> get reactiveServices => [_sizeService];
 }

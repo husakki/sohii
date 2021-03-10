@@ -1,22 +1,18 @@
 import 'package:injectable/injectable.dart';
+import 'package:observable_ish/observable_ish.dart';
+import 'package:stacked/stacked.dart';
 
 @lazySingleton
-class SizeService {
-  //TODO es ist komisch, wenn das nicht null ist dann funkt es auch
-  // aber es sollte auch so funkten weil ich es ja sette!!
-  String _currentSize;
+class SizeService with ReactiveServiceMixin {
+  RxValue<String> _currentSize = RxValue<String>();
 
-  String currentSize() {
-    print("ich returne dir: " + this._currentSize.toString());
-    return this._currentSize;
+  SizeService() {
+    listenToReactiveValues([_currentSize]);
   }
 
-  String idk() {
-    return this._currentSize;
-  }
+  String get currentSize => this._currentSize.value;
 
-  void setcurrentSize(value) {
-    this._currentSize = value;
-    print("ich bin currentSize im Service: " + this._currentSize);
+  void setcurrentSize(inputValue) {
+    this._currentSize.value = inputValue;
   }
 }

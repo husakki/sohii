@@ -13,7 +13,7 @@ class ShoppingCartButtonViewModel extends ReactiveViewModel {
     ShoppedProducts newItem = ShoppedProducts(size, products);
     print("size: " + size + " product: " + products.product);
     _shoppingService.addToShoppingList(newItem);
-    notifyListeners();
+    notifyListeners(); // brauch ich das noch?
   }
 
   int get totalItems => _shoppingService.getShoppingListLength();
