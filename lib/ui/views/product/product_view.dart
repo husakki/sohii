@@ -79,6 +79,7 @@ class ProductView extends StatelessWidget {
                                         ShoppingCartButtonView(
                                           size: model.selectedSize,
                                           products: data[index],
+                                          buttonColor: data[index].mainColour,
                                         ),
                                       ],
                                     ),

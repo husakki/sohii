@@ -7,7 +7,9 @@ import 'shoppingcartbutton_viewmodel.dart';
 class ShoppingCartButtonView extends StatelessWidget {
   final String size;
   final Products products;
-  ShoppingCartButtonView({Key key, this.size, this.products}) : super(key: key);
+  final String buttonColor;
+  ShoppingCartButtonView({Key key, this.size, this.products, this.buttonColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class ShoppingCartButtonView extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: Colors.transparent,
                   elevation: 1.0,
-                  shadowColor: Color(0xffFFFFFF),
+                  shadowColor: Color(int.parse(buttonColor)),
                 ),
                 child: Text("in den Warenkorb"),
                 onPressed: size == null
