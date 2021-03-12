@@ -5,17 +5,19 @@ import 'package:stacked/stacked.dart';
 
 class DropDownSizeViewModel extends ReactiveViewModel {
   var _sizeService = locator<SizeService>();
-  List<String> sizes = ["S", "M", "L", "XL"];
+  List<String> _sizes = ["S", "M", "L", "XL"];
+
+  List<String> get sizes => this._sizes;
 
   String get getValueChoose => _sizeService.currentSize;
 
-  set setValueChoose(String newvalueChoose) {
+  setValueChoose(String newvalueChoose) {
     _sizeService.setcurrentSize(newvalueChoose);
     notifyListeners(); // brauch ich das noch?
   }
 
   List<DropdownMenuItem<String>> getSizesAsDropDownMenu() {
-    return sizes.map((e) {
+    return this._sizes.map((e) {
       return DropdownMenuItem(
         value: e,
         child: Text(e),

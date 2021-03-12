@@ -9,6 +9,10 @@ class ShoppingCartButtonViewModel extends ReactiveViewModel {
   final _shoppingService = locator<ShoppingService>();
 
   void addItem(String size, Products products) {
+    print("Füge folgendes Item in den Warenkorb: ---> " +
+        products.product +
+        " mit der Größe: ---> " +
+        size);
     ShoppedProducts newItem = ShoppedProducts(size, products);
     _shoppingService.addToShoppingList(newItem);
     notifyListeners(); // brauch ich das noch?

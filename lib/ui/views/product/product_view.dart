@@ -67,12 +67,18 @@ class ProductView extends StatelessWidget {
                                       ],
                                     ),
                                     Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Container(
                                           width: 350,
                                           child: Text(data[index].description),
                                         ),
-                                        DropDownSize(),
+                                        Container(
+                                          height: 100,
+                                          width: 350,
+                                          child: DropDownSize(),
+                                        ),
                                         SizedBox(
                                           height: 50,
                                         ),
