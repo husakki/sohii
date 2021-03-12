@@ -77,11 +77,13 @@ class ProductView extends StatelessWidget {
                                         Container(
                                           height: 100,
                                           width: 350,
+                                          margin: EdgeInsets.symmetric(
+                                              vertical: 34),
                                           child: DropDownSize(),
                                         ),
-                                        SizedBox(
-                                          height: 50,
-                                        ),
+                                        // SizedBox(
+                                        //   height: 50,
+                                        // ),
                                         ShoppingCartButtonView(
                                           size: model.selectedSize,
                                           products: data[index],
