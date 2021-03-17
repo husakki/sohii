@@ -9,26 +9,19 @@ class SizeSelector extends StatefulWidget {
   _SizeSelectorState createState() => _SizeSelectorState();
 }
 
-class _SizeSelectorState extends State<SizeSelector> {
-  Offset tapOffset;
+class _SizeSelectorState extends State<SizeSelector>
+    with SingleTickerProviderStateMixin {
+  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     Map<String, GlobalKey> gKeysMap = new Map();
+
     for (String size in this.widget._sizes) {
       gKeysMap[size] = new GlobalKey();
     }
+
     return Stack(
       children: [
-        if (tapOffset != null)
-          AnimatedPositioned.fromRect(
-            rect: Rect.fromCircle(
-              center: tapOffset,
-              radius: 60.0,
-            ),
-            child: Container(width: 80, height: 80, color: Colors.red),
-            duration: Duration(milliseconds: 400),
-            curve: Curves.bounceOut,
-          ),
         Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,21 +31,24 @@ class _SizeSelectorState extends State<SizeSelector> {
               .map((size) => GestureDetector(
                     onTapDown: (details) {
                       this.widget._selectIt(size);
-                      RenderBox rBox =
-                          gKeysMap[size].currentContext.findRenderObject();
-                      print(gKeysMap[size].currentContext.size.width);
-                      // print(rBox.localToGlobal(Offset.zero).dx);
-                      setState(() {
-                        tapOffset = Offset(
-                            gKeysMap[size].currentContext.size.width, 20);
-                        print("offset: ${tapOffset}");
-                      });
+                      setState(
+                          () => activeIndex = this.widget._sizes.indexOf(size));
                     },
-                    child: Text(
-                      size,
-                      key: gKeysMap[size],
-                      style: TextStyle(
-                        fontSize: 20,
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 400),
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        border: activeIndex != this.widget._sizes.indexOf(size)
+                            ? null
+                            : Border.all(width: 2, color: Colors.black),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      child: Text(
+                        size,
+                        key: gKeysMap[size],
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
                       ),
                     ),
                   ))
