@@ -90,6 +90,7 @@ class ProductView extends StatelessWidget {
                                           // SizedBox(
                                           //   height: 50,
                                           // ),
+                                          //TODO das raus und in shoppingCartButton packen!!!!
                                           ShoppingCartButtonView(
                                             size: model.selectedSize,
                                             products: data[index],
