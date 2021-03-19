@@ -5,6 +5,7 @@ import 'package:sohii/ui/views/shoppingcart/shoppingcart_view.dart';
 
 import 'constans.dart';
 import 'ui/views/product/product_view.dart';
+import 'ui/views/warenkorb/warenkorb_view.dart';
 
 void main() {
   setupLocator();
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
                   child: ShoppingCartView(),
                 )),
             ProductView(),
+            WarenKorbView(),
           ],
         ),
       ),

@@ -11,7 +11,6 @@ class DropDownSize extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<DropDownSizeViewModel>.reactive(
       builder: (context, model, child) => Container(
-        // color: Colors.lightGreen,
         child: Center(
           child: SizeSelector(model.setValueChoose, model.sizes),
         ),
