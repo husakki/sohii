@@ -12,10 +12,9 @@ class SizeSelector extends StatefulWidget {
 class _SizeSelectorState extends State<SizeSelector>
     with SingleTickerProviderStateMixin {
   int activeIndex = 0;
+  Map<String, GlobalKey> gKeysMap = new Map();
   @override
   Widget build(BuildContext context) {
-    Map<String, GlobalKey> gKeysMap = new Map();
-
     for (String size in this.widget._sizes) {
       gKeysMap[size] = new GlobalKey();
     }
@@ -40,7 +39,7 @@ class _SizeSelectorState extends State<SizeSelector>
                       decoration: BoxDecoration(
                         border: activeIndex != this.widget._sizes.indexOf(size)
                             ? null
-                            : Border.all(width: 2, color: Colors.black),
+                            : Border.all(width: 2, color: Colors.white),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Text(
