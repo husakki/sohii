@@ -3,9 +3,11 @@ import 'package:sohii/services/size_service.dart';
 import 'package:sohii/ui/views/app/locator.dart';
 import 'package:stacked/stacked.dart';
 
-class DropDownSizeViewModel extends ReactiveViewModel {
+class SizeSelectorViewModel extends ReactiveViewModel {
   var _sizeService = locator<SizeService>();
   List<String> _sizes = ["S", "M", "L", "XL"];
+  int _activeIndex = 0;
+  Map<String, GlobalKey> _gKeysMap = new Map();
 
   List<String> get sizes => this._sizes;
 
@@ -25,6 +27,23 @@ class DropDownSizeViewModel extends ReactiveViewModel {
     }).toList();
   }
 
+  int get activeIndex => this._activeIndex;
+  set activeIndex(newIndex) {
+    this._activeIndex = newIndex;
+  }
+
+  Map<String, GlobalKey> get gKeysMap {
+    if (this._gKeysMap == null) _initgKeysMap();
+    return this._gKeysMap;
+  }
+
   @override
   List<ReactiveServiceMixin> get reactiveServices => [_sizeService];
+
+  void _initgKeysMap() {
+    print("servus");
+    for (String size in this._sizes) {
+      gKeysMap[size] = new GlobalKey();
+    }
+  }
 }

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sohii/ui/views/app/locator.dart';
-import 'package:sohii/ui/views/home/header_view.dart';
-import 'package:sohii/ui/views/shoppingcart/shoppingcart_view.dart';
+import 'package:sohii/ui/views/body/product/product_view.dart';
+import 'package:sohii/ui/views/head/logo/logo_view.dart';
+import 'package:sohii/ui/views/head/shoppingcarticon/shoppingcarticon_view.dart';
 
 import 'constans.dart';
-import 'ui/views/product/product_view.dart';
-import 'ui/views/warenkorb/warenkorb_view.dart';
 
 void main() {
   setupLocator();
@@ -23,15 +22,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Column(
           children: [
-            HeaderView(),
+            LogoView(),
             Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 85),
-                  child: ShoppingCartView(),
+                  child: ShoppingCartIconView(),
                 )),
             ProductView(),
-            WarenKorbView(),
           ],
         ),
       ),

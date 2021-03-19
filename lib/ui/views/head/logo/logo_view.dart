@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-import 'header_viewmodel.dart';
+import 'logo_viewmodel.dart';
 
-class HeaderView extends StatelessWidget {
-  const HeaderView({Key key}) : super(key: key);
+class LogoView extends StatelessWidget {
+  const LogoView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<HeaderViewModel>.nonReactive(
+    return ViewModelBuilder<LogoViewModel>.nonReactive(
         builder: (context, model, child) => Container(
               // width: double.infinity,
               child: Image(
@@ -17,6 +17,6 @@ class HeaderView extends StatelessWidget {
                 height: 200,
               ),
             ),
-        viewModelBuilder: () => HeaderViewModel());
+        viewModelBuilder: () => LogoViewModel());
   }
 }

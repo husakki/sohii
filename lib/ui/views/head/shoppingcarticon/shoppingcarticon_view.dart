@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sohii/ui/views/shoppingcart/shoppingcart_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
-class ShoppingCartView extends StatelessWidget {
-  const ShoppingCartView({Key key}) : super(key: key);
+import 'shoppingcarticon_viewmodel.dart';
+
+class ShoppingCartIconView extends StatelessWidget {
+  const ShoppingCartIconView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<ShoppingCartViewModel>.reactive(
+    return ViewModelBuilder<ShoppingCartIconViewModel>.reactive(
         builder: (context, model, child) => Stack(
               alignment: Alignment.bottomRight,
               children: [
@@ -26,6 +27,6 @@ class ShoppingCartView extends StatelessWidget {
                 ),
               ],
             ),
-        viewModelBuilder: () => ShoppingCartViewModel());
+        viewModelBuilder: () => ShoppingCartIconViewModel());
   }
 }

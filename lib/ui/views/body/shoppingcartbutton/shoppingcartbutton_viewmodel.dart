@@ -7,6 +7,7 @@ import 'package:stacked/stacked.dart';
 
 class ShoppingCartButtonViewModel extends ReactiveViewModel {
   final _shoppingService = locator<ShoppingService>();
+  var _sizeService = locator<SizeService>();
 
   void addItem(String size, Products products) {
     print("Füge folgendes Item in den Warenkorb: ---> " +
@@ -20,6 +21,9 @@ class ShoppingCartButtonViewModel extends ReactiveViewModel {
 
   int get totalItems => _shoppingService.getShoppingListLength();
 
+  String get selectedSize => _sizeService.currentSize;
+
   @override
-  List<ReactiveServiceMixin> get reactiveServices => [_shoppingService];
+  List<ReactiveServiceMixin> get reactiveServices =>
+      [_shoppingService, _sizeService];
 }

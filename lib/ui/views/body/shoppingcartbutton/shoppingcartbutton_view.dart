@@ -5,10 +5,9 @@ import 'package:stacked/stacked.dart';
 import 'shoppingcartbutton_viewmodel.dart';
 
 class ShoppingCartButtonView extends StatelessWidget {
-  final String size;
   final Products products;
   final String buttonColor;
-  ShoppingCartButtonView({Key key, this.size, this.products, this.buttonColor})
+  ShoppingCartButtonView({Key key, this.products, this.buttonColor})
       : super(key: key);
 
   @override
@@ -24,10 +23,10 @@ class ShoppingCartButtonView extends StatelessWidget {
                   shadowColor: Color(int.parse(buttonColor)),
                 ),
                 child: Text("in den Warenkorb"),
-                onPressed: size == null
+                onPressed: model.selectedSize == null
                     ? null
                     : () => {
-                          model.addItem(size, products),
+                          model.addItem(model.selectedSize, products),
                         },
               ),
             ),
