@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sohii/ui/views/body/shoppingcartbutton/shoppingcartbutton_view.dart';
 import 'package:sohii/ui/views/body/sizeselector/sizeselector_view.dart';
-import 'package:sohii/ui/views/shoppingcartButton/shoppingcartbutton_view.dart';
 import 'package:sohii/widgets/entrance_fader.dart';
 import 'package:stacked/stacked.dart';
 

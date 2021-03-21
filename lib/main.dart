@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sohii/ui/views/app/locator.dart';
-import 'package:sohii/ui/views/body/product/product_view.dart';
-import 'package:sohii/ui/views/head/logo/logo_view.dart';
-import 'package:sohii/ui/views/head/shoppingcarticon/shoppingcarticon_view.dart';
+import 'package:sohii/ui/views/screen_view.dart';
 
 import 'constans.dart';
 
@@ -19,20 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: mainTheme,
       title: 'Sohii',
-      home: Scaffold(
-        body: Column(
-          children: [
-            LogoView(),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 85),
-                  child: ShoppingCartIconView(),
-                )),
-            ProductView(),
-          ],
-        ),
-      ),
+      home: ScreenView(),
     );
   }
 }
