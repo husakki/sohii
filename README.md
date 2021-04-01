@@ -1,6 +1,10 @@
 # sohii
 
-A new Flutter project.
+Building a website with Flutter
+This website is based on tshirt design I made myself.
+I currently dont plan to sell any on there, just making this
+to learn more about flutter and how to structure project and much more ^^
+
 
 ## Getting Started
 
