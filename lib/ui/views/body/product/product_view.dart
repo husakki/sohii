@@ -31,8 +31,8 @@ class ProductView extends StatelessWidget {
                                 return Container(
                                   child: EntranceFader(
                                     offset: Offset(-32, 0),
-                                    delay: Duration(milliseconds: 400),
-                                    duration: Duration(seconds: 1),
+                                    delay: Duration(milliseconds: 250),
+                                    duration: Duration(milliseconds: 700),
                                     child: Column(
                                       children: [
                                         Row(
