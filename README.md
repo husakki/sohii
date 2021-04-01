@@ -5,6 +5,10 @@ This website is based on tshirt design I made myself.
 I currently dont plan to sell any on there, just making this
 to learn more about flutter and how to structure project and much more ^^
 
+The project architecture used there is based on the stacked package by filledstacks
+https://pub.dev/packages/stacked
+
+---
 
 ## Getting Started
 
