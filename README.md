@@ -1,11 +1,11 @@
 # sohii
 
-Building a website with Flutter
+Building a website with Flutter.
 This website is based on tshirt design I made myself.
 I currently dont plan to sell any on there, just making this
-to learn more about flutter and how to structure project and much more ^^
+to learn more about flutter and how to structure project and so on ^^
 
-The project architecture used there is based on the stacked package by filledstacks
+The project architecture used here is based on the stacked package by filledstacks
 https://pub.dev/packages/stacked
 
 ---
